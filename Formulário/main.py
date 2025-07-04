@@ -13,7 +13,7 @@ for botao in produto:
         botao.click()
         break
 
-time.sleep(1)
+time.sleep(0.5)
 
 maxxrural = navegador.find_elements('class name', 'elementor-button-wrapper')
 for botao in maxxrural:

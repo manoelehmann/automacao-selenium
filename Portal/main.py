@@ -8,7 +8,7 @@ navegador = webdriver.Chrome()
 navegador.get('https://sei.esup.edu.br/index.xhtml')
 navegador.maximize_window()
 
-espera = WebDriverWait(navegador, 15)
+espera = WebDriverWait(navegador, 20)
 
                          # estrutura de login
 

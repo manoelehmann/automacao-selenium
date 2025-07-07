@@ -27,9 +27,9 @@ for botao in selecionar_filtro:
     if 'Canal' in botao.text:
         botao.click()
         break
+time.sleep(0.5)
 
 filtro(navegador)
-
 selecionar_data = navegador.find_elements('id', 'endpoint')
 for botao in selecionar_data:
     if 'Data de envio' in botao.text:

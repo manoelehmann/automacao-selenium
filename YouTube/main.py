@@ -35,7 +35,7 @@ time.sleep(1)
 
 filtro(navegador)
 
-time.sleep(1)
+time.sleep(0.3)
 selecionar_data = navegador.find_elements('id', 'label')
 for botao in selecionar_data:
     if 'Data de envio' in botao.text:
@@ -55,4 +55,5 @@ for botao in video:
         botao.click()
         break
 
+'''Devido o uso do AJAX, o teste pode não funcionar em algumas tentativas'''
 time.sleep(1000)

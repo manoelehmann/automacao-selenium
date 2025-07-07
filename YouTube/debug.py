@@ -27,18 +27,22 @@ for botao in selecionar_filtro:
     if 'Canal' in botao.text:
         botao.click()
         break
+
 time.sleep(0.5)
 
 filtro(navegador)
-selecionar_data = navegador.find_elements('id', 'endpoint')
+
+selecionar_data = navegador.find_elements('id', 'label')
 for botao in selecionar_data:
     if 'Data de envio' in botao.text:
         botao.click()
         break
 
-
-'''FAZER UMA AUTOMAÇÃO PARA PESQUISAR O VIDEO MAIS RECENTE DA MAXXSOFT USANDO FILTRO'''
-
-
+time.sleep(0.5)
+canal = navegador.find_elements('id', 'main-link')
+for botao in canal:
+    if 'MaxxSoft Tecnologia' in botao.text:
+        botao.click()
+        break
 
 time.sleep(1000)

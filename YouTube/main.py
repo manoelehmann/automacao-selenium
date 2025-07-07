@@ -14,7 +14,27 @@ clicar_pesquisar = navegador.find_element('class name', 'ytSearchboxComponentSea
 clicar_pesquisar.click()
 time.sleep(1)
 
-navegador.find_element('class name', 'yt-spec-button-shape-next.yt-spec-button-shape-next--text.yt-spec-button-shape-next--mono').click()
+def filtro(navegador):
+    botao_filtro = navegador.find_elements('class name', 'style-scope.ytd-search-header-renderer')
+    for botao in botao_filtro:
+        if 'Filtros' in botao.text:
+            botao.click()
+            break
+filtro(navegador)
+
+selecionar_filtro = navegador.find_elements('id', 'label')
+for botao in selecionar_filtro:
+    if 'Canal' in botao.text:
+        botao.click()
+        break
+
+filtro(navegador)
+
+selecionar_data = navegador.find_elements('id', 'endpoint')
+for botao in selecionar_data:
+    if 'Data de envio' in botao.text:
+        botao.click()
+        break
 
 
 '''FAZER UMA AUTOMAÇÃO PARA PESQUISAR O VIDEO MAIS RECENTE DA MAXXSOFT USANDO FILTRO'''

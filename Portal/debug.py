@@ -41,7 +41,7 @@ mini_financeiro.click()
                           # função para selecionar opções
 
 def selecionar_opcao(navegador, texto_opcao):
-    percorrer_lista = navegador.find_element('id', 'form:selectItemSituacaoContaReceberConsultar')
+    percorrer_lista = espera.until(EC.presence_of_element_located(('id', 'form:selectItemSituacaoContaReceberConsultar')))
     selecionar = Select(percorrer_lista)
     selecionar.select_by_visible_text(texto_opcao)
 

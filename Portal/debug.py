@@ -8,12 +8,18 @@ navegador = webdriver.Chrome()
 navegador.get('https://sei.esup.edu.br/index.xhtml')
 navegador.maximize_window()
 
-espera = WebDriverWait(navegador, 15)
+espera = WebDriverWait(navegador, 20)
 
                          # estrutura de login
 
-navegador.find_element('id', 'form:usuario').send_keys('71550403125')
-navegador.find_element('id', 'form:senha').send_keys('@Neto07342')
+from dotenv import load_dotenv
+import os
+load_dotenv()
+usuario = os.getenv("SEI_USUARIO")
+senha = os.getenv("SEI_SENHA")
+
+navegador.find_element('id', 'form:usuario').send_keys(usuario)
+navegador.find_element('id', 'form:senha').send_keys(senha)
 navegador.find_element('id', 'form:loginBtn:loginBtn').click()
 time.sleep(5)
 
